@@ -40,8 +40,8 @@ mobile:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://ip-address-tracker-main.vercel.app/)
+- Solution URL: [https://www.frontendmentor.io/solutions/ip-address-tracker-app-yE3kIGftEc](https://www.frontendmentor.io/solutions/ip-address-tracker-app-yE3kIGftEc)
+- Live Site URL: [https://ip-address-tracker-main.vercel.app/](https://ip-address-tracker-main.vercel.app/)
 
 ## My process
 

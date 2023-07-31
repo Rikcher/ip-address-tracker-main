@@ -1,0 +1,304 @@
+/***                css reset                     ***/
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    font-family: inherit;
+}
+
+/****************************************************/
+
+/***                colors and fonts                ***/
+
+:root {
+    /*? Colors */
+
+    --lightGray: hsl(0, 0%, 84%);
+    --VeryDarkGray: hsl(0, 0%, 17%);
+    --DarkGray: hsl(0, 0%, 59%);
+
+    /*? Typography */
+
+    --fontSize: 1.318vw; /* text input  18px */
+    --smallWeight: 400;
+    --mediumWeight: 500;
+    --largeWeight: 700;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;   
+}
+
+/****************************************************/
+
+
+/*****************   Top part of the page   ******************/
+
+header {
+    height: 35.3vh;
+    background-image: url(/images/pattern-bg-desktop.png);
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1vh;
+    padding-top: 3.5vh;
+}
+
+header h1 {
+    color: white;
+    font-size: calc(var(--fontSize) * 1.428);
+}
+
+#search-bar-wrapper {
+    margin-top: 2.6vh;
+    width: 31.8vw;
+    height: 7.25vh;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#search-bar-input {
+    flex-grow: 2;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-weight: var(--smallWeight);
+    color: var(--VeryDarkGray);
+    outline: none;
+    padding: 0 1.4vw;
+    cursor: pointer;
+    font-size: calc(var(--fontSize) * 0.8);
+}
+
+#search-bar-input::placeholder {
+    color: var(--DarkGray);
+    font-size: calc(var(--fontSize) * 0.8);
+}
+
+#search-bar-input::-webkit-outer-spin-button,
+#search-bar-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#search-bar-wrapper button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: black;
+    height: 100%;
+    width: 3.2vw;
+    cursor: pointer;
+}
+
+#search-bar-wrapper button:hover {
+    background-color: var(--VeryDarkGray);
+}
+
+
+/************************************************************/
+
+
+/****************            map                *************/
+
+#map { 
+    height: 64.7vh;
+    z-index: 1;
+}
+
+/************************************************************/
+
+
+/****************       user-information         *************/
+
+
+#user-information {
+    position: absolute;
+    top: 25.2vh;
+    z-index: 3;
+    left: 18.3vw;
+    width: 63.5vw;
+    height: 20.5vh;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#ip-address-tile {
+    padding-left: 1.82vw;
+    margin-right: 3.35vw;
+}
+
+#location-tile {
+    margin-right: .5vw;
+    max-width: 13.5vw;
+}
+
+#timezone-tile {
+    margin-right: 5.84vw;
+}
+
+#isp-tile {
+    max-width: 10vw;
+}
+
+.information-tile {
+    display: flex;
+    flex-direction: column;
+    height: 5.842vw;
+    padding: .7vh 0;
+    overflow: hidden;
+}
+
+
+.information-tile h3 {
+    color: var(--DarkGray);
+    font-weight: var(--largeWeight);
+    font-size: calc(var(--fontSize) * 0.535);
+    letter-spacing: .09vw;
+    padding-bottom: 1.75vh;
+}
+
+.information-tile h2 {
+    color: var(--VeryDarkGray);
+    font-weight: var(--mediumWeight);
+    font-size: calc(var(--fontSize) * 1.11);
+}
+
+.spacing {
+    width: 1px;
+    height: 9.5vh;
+    background-color: var(--lightGray);
+    margin-right: 1.82vw;
+}
+
+/************************************************************/
+
+/** attribution  */
+
+footer { 
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    top: 95vh;
+    left: 1vw;
+    color: hsl(0, 0%, 0%);
+    font-size: calc(var(--fontSize) * .76);
+    font-weight: var(--mediumWeight);
+    z-index: 3;
+}
+.attribution a {
+    text-decoration: none;
+    color: hsl(228, 45%, 44%);
+    font-size: calc(var(--fontSize) * .76);
+    font-weight: var(--mediumWeight);
+}
+
+/**  */
+
+
+/*********************************** mobile design *******************************/
+
+@media screen and (max-width: 480px) {
+
+    body {
+        background-color: black;
+    }
+
+    header {
+        height: 45vh;
+        background-image: url(/images/pattern-bg-mobile.png);
+        padding-top: 3.8vh;
+    }
+
+    header h1 {
+        color: white;
+        font-size: calc(var(--fontSize) * 5.43);
+    }
+    
+    #search-bar-wrapper {
+        margin-top: 3.2vh;
+        width: 87vw;
+        height: 8.7vh;
+    }
+    
+    #search-bar-input {
+        padding: 0 6.15vw;
+        font-size: calc(var(--fontSize) * 3.7);
+    }
+
+    #search-bar-input::placeholder {
+        font-size: calc(var(--fontSize) * 3.7);
+    }
+
+    #search-bar-wrapper button {
+        width: 15vw;
+    }
+
+    #user-information {
+        left: 6.5vw;
+        width: 87vw;
+        height: 44vh;
+        flex-direction: column;
+        padding: 3.8vh 0;
+    }
+    
+    #ip-address-tile {
+        padding-left: 0;
+        margin-right: 0;
+    }
+    
+    #location-tile {
+        margin-right: 0;
+        max-width: 1000px;
+    }
+    
+    #timezone-tile {
+        margin-right: 0;
+    }
+    
+    #isp-tile {
+        max-width: 1000px;
+    }
+    
+    .information-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 0;
+        margin-bottom: 3.5vh;
+        overflow: visible;
+    }
+    
+    
+    .information-tile h3 {
+        font-size: calc(var(--fontSize) * 2.4);
+        padding-bottom: 1vh;
+    }
+    
+    .information-tile h2 {
+        font-size: calc(var(--fontSize) * 4);
+    }
+    
+    .spacing {
+        display: none;
+    }
+}
+
+/************************************************************/

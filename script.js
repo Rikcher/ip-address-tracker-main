@@ -18,17 +18,18 @@ function sendIpToServer(ip) {
         });
 }
 
-function updateMap() {
-    // Fetch IP information based on the provided IP address
-    fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ipAddress}`)
+function getUserIp() {
+    fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
-        .then(data => sendIpToServer(data.ip);
-        )
+        .then(data => {
+            const userIp = data.ip;
+            console.log('User IP:', userIp);
+            // You can now use the IP address (e.g., pass it to your server)
+            sendIpToServer(userIp);
+        })
         .catch(error => {
-            console.error('Error fetching IP information:', error);
+            console.error('Error fetching IP:', error);
         });
 }
 
-updateMap()
-
-//************************************************************/ 
+getUserIp();

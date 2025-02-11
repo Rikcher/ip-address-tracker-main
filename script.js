@@ -1,7 +1,7 @@
 //*******************   map  ******************** */ 
 
 const apiKey = 'at_ljPows53fXGJLRddTHKKZBDUUGbQG'; 
-let ipAddress = document.querySelector("#search-bar-input").value; 
+let ipAddress = document.querySelector("#search-bar-input").value || ""; 
 let displayedIpAddress = document.querySelector("#ip-address")
 let displayedLocation = document.querySelector("#location")
 let displayedTimezone = document.querySelector("#timezone")

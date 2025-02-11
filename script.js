@@ -25,6 +25,25 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Initial map setup based on the IP address value when the page loads
 updateMap();
 
+function sendIpToServer(ip) {
+    const url = 'https://your-server-url.com/endpoint'; // Replace with your actual URL
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ip: ip }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
 function updateMap() {
     // Fetch IP information based on the provided IP address
     fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ipAddress}`)
@@ -43,6 +62,8 @@ function updateMap() {
             // Update the map view and marker with new coordinates
             map.setView([userLatitude, userLongitude], 16);
             const marker = L.marker([userLatitude, userLongitude], {icon: customIcon}).addTo(map);
+
+            sendIpToServer(data.ip);
         })
         .catch(error => {
             console.error('Error fetching IP information:', error);

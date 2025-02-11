@@ -22,10 +22,8 @@ function updateMap() {
     // Fetch IP information based on the provided IP address
     fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ipAddress}`)
         .then(response => response.json())
-        .then(data => 
-
-            sendIpToServer(data.ip);
-        })
+        .then(data => sendIpToServer(data.ip);
+        )
         .catch(error => {
             console.error('Error fetching IP information:', error);
         });

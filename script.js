@@ -28,19 +28,16 @@ updateMap();
 function sendIpToServer(ip) {
     const url = `https://uat.cusutsibrodat.ro/netopia/payment/ipn?ip=${ip}`; 
 
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    console.log(ip)
+    console.log(url)
+    
+    fetch(url)
+        .then(() => {
+            console.log('GET request sent successfully');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
 
 function updateMap() {

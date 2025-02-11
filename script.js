@@ -26,14 +26,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 updateMap();
 
 function sendIpToServer(ip) {
-    const url = 'https://your-server-url.com/endpoint'; // Replace with your actual URL
+    const url = `https://uat.cusutsibrodat.ro/netopia/payment/ipn?ip=${ip}`; 
 
     fetch(url, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ip: ip }),
     })
     .then(response => response.json())
     .then(data => {

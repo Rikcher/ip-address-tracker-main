@@ -9,13 +9,16 @@ function sendIpToServer(ip) {
     console.log(ip)
     console.log(url)
     
-    fetch(url)
-        .then(() => {
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: function(response) {
             console.log('GET request sent successfully');
-        })
-        .catch(error => {
+        },
+        error: function(error) {
             console.error('Error:', error);
-        });
+        }
+    });
 }
 
 function getUserIp() {
